@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoAjaxService } from '../shared/todo-ajax.service';
+import { Todo } from '../shared/todo';
 
 @Component({
   selector: 'app-todo',
@@ -6,23 +8,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-tableau:string[]=[
-'Json',
-'Jquery',
-'CSS',
-'Angular'
-];
-newTodo:string;
+  liste:Todo[];
+  newTodo:string;
 
-  constructor() { }
+   /**
+     * Pour utiliser un service dans un component ou
+     * ailleurs, on ne fait pas une instance nous même,
+     * à la place, on utilise l'injection de dépendance
+     * de angular (https://angular.io/guide/dependency-injection)
+     * C'est elle qui se chargera de faire les instances
+     * des services et de nous les rendre accessibles dans
+     * les component et autre.
+     * Pour injecter un service dans un component, on
+     * ajoute simplement en argument du constructor une
+     * variable (public ou private, mais souvent private)
+     * qui aura notre classe service comme type (peu importe
+     * le nom de la variable tant que le type correspond)
+     */
+  constructor(private todoService:TodoAjaxService) {
+  }
 
-  ngOnInit() {
+ ngOnInit() {
+    this.todoService.getAllTodo().then((todos) => this.liste = todos);
   }
-//ajouter methode qui ajoute et remove items
-  addTodo(){
-    this.tableau.push(this.newTodo);
-  }
- removeTodo(index:number){
-this.tableau.splice(index,1);
+
+ addTodo() {
+    
  }
+
+ removeTodo(index:number) {
+    
+ }
+
 }
