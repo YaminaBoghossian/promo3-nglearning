@@ -14,7 +14,7 @@ import { Injectable } from "@angular/core";
  //décorateur Injectable
 @Injectable()
 export class TodoService {
-    private tableau:string[] = [
+    private liste:string[] = [
         'ga',
         'zo',
         'meu'
@@ -29,14 +29,14 @@ export class TodoService {
       */
 
     getTodos():string[] {
-        return this.tableau;
+        return this.liste;
     }
 
     add(todo:string) {
-        this.tableau.push(todo);
+        this.liste.push(todo);
     }
 
     remove(index:number) {
-        this.tableau.splice(index,1);
+        this.liste.splice(index,1);
     }
- } 
+}

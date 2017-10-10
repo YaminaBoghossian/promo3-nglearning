@@ -1,7 +1,5 @@
-//interface
-//? pour dire optionnel 
 
-export interface Todo{
+export interface Todo {
     id?:number;
     message:string;
 }

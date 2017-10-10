@@ -1,0 +1,11 @@
+.active {
+    font-weight: bold;
+    text-decoration: none;
+    color: pink;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}

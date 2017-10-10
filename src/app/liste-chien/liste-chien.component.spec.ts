@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoucleComponentComponent } from './boucle-component.component';
+import { ListeChienComponent } from './liste-chien.component';
 
-describe('BoucleComponentComponent', () => {
-  let component: BoucleComponentComponent;
-  let fixture: ComponentFixture<BoucleComponentComponent>;
+describe('ListeChienComponent', () => {
+  let component: ListeChienComponent;
+  let fixture: ComponentFixture<ListeChienComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BoucleComponentComponent ]
+      declarations: [ ListeChienComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BoucleComponentComponent);
+    fixture = TestBed.createComponent(ListeChienComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

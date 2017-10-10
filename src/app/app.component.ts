@@ -9,9 +9,9 @@ import { CompteurService } from './shared/compteur/compteur.service';
 export class AppComponent {
   selectedPage = 'boucle';
 
- constructor(private cs:CompteurService) { }
+  constructor(private cs:CompteurService) { }
   
-   ngOnInit() {
+    ngOnInit() {
       console.log('compte initial dans app : ' +this.cs.compte);
       this.cs.increment();
       console.log('compte final dans app : ' +this.cs.compte);
